@@ -1,0 +1,23 @@
+elasticsearch:
+  # Change it in multi-node cluster
+  replicas: 1
+  minimumMasterNodes: 1
+  # Change it to "hard" in production
+  antiAffinity: "soft"
+  envFrom:
+    - secretRef:
+        name: elastic-secret
+  # Shrink default JVM heap.
+  esJavaOpts: "-Xmx128m -Xms128m"
+  # Allocate smaller chunks of memory per pod.
+  resources:
+    requests:
+      cpu: "100m"
+      memory: "512M"
+    limits:
+      cpu: "1000m"
+      memory: "512M"
+  volumeClaimTemplate:
+    resources:
+      requests:
+        storage: 8Gi
