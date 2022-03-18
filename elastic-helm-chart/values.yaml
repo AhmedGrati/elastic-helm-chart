@@ -4,6 +4,13 @@ elasticsearch:
   minimumMasterNodes: 1
   # Change it to "hard" in production
   antiAffinity: "soft"
+  # Request smaller persistent volumes.
+  volumeClaimTemplate:
+    accessModes: [ "ReadWriteOnce" ]
+    storageClassName: "standard"
+    resources:
+      requests:
+        storage: 8Gi
   envFrom:
     - secretRef:
         name: elastic-secret
@@ -17,7 +24,3 @@ elasticsearch:
     limits:
       cpu: "1000m"
       memory: "512M"
-  volumeClaimTemplate:
-    resources:
-      requests:
-        storage: 8Gi
