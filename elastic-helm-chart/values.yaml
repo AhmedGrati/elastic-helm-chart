@@ -18,14 +18,6 @@ elasticsearch:
   # Shrink default JVM heap.
   esJavaOpts: "-Xmx128m -Xms128m"
   # Allocate smaller chunks of memory per pod.
-  volumeNodeAffinity:
-    required:
-      nodeSelectorTerms:
-        - matchExpressions:
-            - key: kubernetes.io/hostname
-              operator: In
-              values:
-                - minikube
   resources:
     requests:
       cpu: "100m"
