@@ -8,7 +8,7 @@ kubectl create ns database
 ```
 2. Pull the dependencies of this chart, by running this command:
 ```shell
-kubectl dependency update .
+kubectl dependency update ./elastic-helm-chart
 ```
 3. Create a secret that will hold the password of the elasticsearch database(the username could not be changed. It's `elastic` by default). It should look like this:
 ```yaml
