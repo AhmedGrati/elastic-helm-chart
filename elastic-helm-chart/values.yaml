@@ -12,6 +12,11 @@ elasticsearch:
     resources:
       requests:
         storage: 8Gi
+  extraEnvs:
+    - name: "xpack.security.enabled"
+      value: "true"
+    - name: "xpack.security.transport.ssl.enabled"
+      value: "true"
   envFrom:
     - secretRef:
         name: elastic-secret
