@@ -1,4 +1,5 @@
 elasticsearch:
+  clusterName: "graylog"
   fullnameOverride: elastic
   # Change it in multi-node cluster
   replicas: 1
@@ -8,7 +9,7 @@ elasticsearch:
   # Request smaller persistent volumes.
   volumeClaimTemplate:
     accessModes: [ "ReadWriteOnce" ]
-    storageClassName: "standard"
+    storageClassName: "openebs-hostpath"
     resources:
       requests:
         storage: 8Gi
