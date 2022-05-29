@@ -20,10 +20,10 @@ elasticsearch:
       value: "true"
     - name: "xpack.security.transport.ssl.enabled"
       value: "true"
-#    - name: ELASTIC_PASSWORD
-#      value: elastic
-#    - name: ELASTIC_USERNAME
-#      value: elastic
+    - name: ELASTIC_PASSWORD
+      value: elastic
+    - name: ELASTIC_USERNAME
+      value: elastic
   envFrom:
     - secretRef:
         name: elastic-secret
