@@ -2,7 +2,7 @@ elasticsearch:
   clusterName: "graylog"
   nameOverride: elastic
   fullnameOverride: elastic
-  clusterHealthCheckParams: "wait_for_status=yellow&timeout=1s"
+  clusterHealthCheckParams: "wait_for_status=yellow&timeout=20s"
   # Change it in multi-node cluster
   replicas: 1
   minimumMasterNodes: 1
