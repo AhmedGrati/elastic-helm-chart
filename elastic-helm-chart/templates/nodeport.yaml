@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: elastic-nodeport-service
+spec:
+  selector:
+    app: elastic
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 9200
+      targetPort: 9200
+      nodePort: 30021
