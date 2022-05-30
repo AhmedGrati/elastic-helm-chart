@@ -23,7 +23,7 @@ elasticsearch:
     - name: ELASTIC_PASSWORD
       value: Elastic2Passwordroot
     - name: ELASTIC_USERNAME
-      value: Elastic2Passwordroot
+      value: elastic
   envFrom:
     - secretRef:
         name: elastic-secret
